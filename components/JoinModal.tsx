@@ -72,7 +72,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSelectR
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-10">
-              {/* Innovator Option */}
+              {/* Team Challenger Option */}
               <div 
                 onClick={() => handleRoleSelect('student')}
                 className="group cursor-pointer relative overflow-hidden p-10 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-primary/[0.03] hover:border-primary/40 transition-all duration-500"
@@ -84,12 +84,12 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSelectR
                   <div className="size-12 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center text-primary mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">school</span>
                   </div>
-                  <h3 className="text-2xl font-black text-white mb-2 uppercase italic tracking-tighter">Innovator</h3>
-                  <p className="text-[10px] text-white/40 leading-relaxed uppercase tracking-[0.2em] font-bold">Student Cluster Access</p>
+                  <h3 className="text-2xl font-black text-white mb-2 uppercase italic tracking-tighter">Team Challenger</h3>
+                  <p className="text-[10px] text-white/40 leading-relaxed uppercase tracking-[0.2em] font-bold">Team Portal Access</p>
                 </div>
               </div>
 
-              {/* Architect Option */}
+              {/* Judge/Referee Option */}
               <div 
                 onClick={() => handleRoleSelect('faculty')}
                 className="group cursor-pointer relative overflow-hidden p-10 rounded-2xl border border-white/5 bg-white/[0.02] hover:bg-secondary/[0.03] hover:border-secondary/40 transition-all duration-500"
@@ -101,8 +101,8 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSelectR
                   <div className="size-12 rounded-lg bg-secondary/10 border border-secondary/20 flex items-center justify-center text-secondary mb-6 group-hover:scale-110 transition-transform">
                     <span className="material-symbols-outlined text-3xl">account_balance</span>
                   </div>
-                  <h3 className="text-2xl font-black text-white mb-2 uppercase italic tracking-tighter">Architect</h3>
-                  <p className="text-[10px] text-white/40 leading-relaxed uppercase tracking-[0.2em] font-bold">Faculty Node Entry</p>
+                  <h3 className="text-2xl font-black text-white mb-2 uppercase italic tracking-tighter">Judge/Referee</h3>
+                  <p className="text-[10px] text-white/40 leading-relaxed uppercase tracking-[0.2em] font-bold">Official Evaluation Gateway</p>
                 </div>
               </div>
             </div>
@@ -122,7 +122,7 @@ export const JoinModal: React.FC<JoinModalProps> = ({ isOpen, onClose, onSelectR
                 {isSignUp ? 'REGISTER' : 'AUTHORIZE'} <span className="text-primary">ID</span>
               </h2>
               <p className="text-white/40 font-mono text-[10px] uppercase tracking-[0.2em]">
-                Sector: {selectedRole === 'student' ? 'Innovator-77' : 'Architect-01'} // Status: Pending
+                Sector: {selectedRole === 'student' ? 'Team Challenger-77' : 'Judge/Referee-01'} // Status: Pending
               </p>
             </div>
 

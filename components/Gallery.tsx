@@ -3,21 +3,21 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import DomeGallery from './DomeGallery';
 
 const galleryImages = [
-  { id: 1, src: '/gallery/gallery_1.jpg', alt: 'Innovation' },
-  { id: 2, src: '/gallery/gallery_2.jpg', alt: 'Engineering' },
-  { id: 3, src: '/gallery/gallery_3.jpg', alt: 'Computing' },
-  { id: 4, src: '/gallery/gallery_4.jpg', alt: 'Community' },
-  { id: 5, src: '/gallery/gallery_5.jpg', alt: 'Aeronautics' },
+  { id: 1, src: '/gallery/gallery_1.jpg', alt: 'Chassis' },
+  { id: 2, src: '/gallery/gallery_2.jpg', alt: 'Track' },
+  { id: 3, src: '/gallery/gallery_3.jpg', alt: 'Motors' },
+  { id: 4, src: '/gallery/gallery_4.jpg', alt: 'Sensors' },
+  { id: 5, src: '/gallery/gallery_5.jpg', alt: 'Testing' },
   { id: 6, src: '/gallery/gallery_6.jpg', alt: 'Design' },
-  { id: 7, src: '/gallery/gallery_7.jpg', alt: 'Nexus' },
-  { id: 8, src: '/gallery/gallery_8.jpg', alt: 'Development' },
-  { id: 9, src: '/gallery/gallery_9.jpg', alt: 'Research' },
-  { id: 10, src: '/gallery/gallery_10.jpg', alt: 'Breakthrough' },
-  { id: 11, src: '/gallery/gallery_11.jpg', alt: 'Breakthrough' },
-  { id: 12, src: '/gallery/gallery_12.jpg', alt: 'Breakthrough' },
-  { id: 13, src: '/gallery/gallery_13.jpg', alt: 'Breakthrough' },
-  { id: 14, src: '/gallery/gallery_14.jpg', alt: 'Breakthrough' },
-  { id: 15, src: '/gallery/gallery_15.jpg', alt: 'Breakthrough' },
+  { id: 7, src: '/gallery/gallery_7.jpg', alt: 'Robot' },
+  { id: 8, src: '/gallery/gallery_8.jpg', alt: 'Build' },
+  { id: 9, src: '/gallery/gallery_9.jpg', alt: 'Speed' },
+  { id: 10, src: '/gallery/gallery_10.jpg', alt: 'Victory' },
+  { id: 11, src: '/gallery/gallery_11.jpg', alt: 'Run' },
+  { id: 12, src: '/gallery/gallery_12.jpg', alt: 'Course' },
+  { id: 13, src: '/gallery/gallery_13.jpg', alt: 'Wheels' },
+  { id: 14, src: '/gallery/gallery_14.jpg', alt: 'Controller' },
+  { id: 15, src: '/gallery/gallery_15.jpg', alt: 'Hardware' },
 ];
 
 export const Gallery: React.FC = () => {
@@ -45,7 +45,7 @@ export const Gallery: React.FC = () => {
             className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-primary/20 bg-primary/5 text-primary text-[10px] font-black uppercase tracking-[0.4em] shadow-[0_0_30px_rgba(var(--primary-rgb),0.05)]"
           >
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
-            Event gallary
+            Track Highlights
             <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
           </motion.div>
           
@@ -54,7 +54,7 @@ export const Gallery: React.FC = () => {
             whileInView={{ opacity: 1, y: 0 }}
             className="text-6xl md:text-9xl font-black font-display uppercase italic tracking-tighter text-white leading-none"
           >
-            Digital <span className="text-gradient">Archives</span>
+            Robot <span className="text-gradient">Archives</span>
           </motion.h2>
 
           <div className="flex items-center justify-center gap-6 max-w-lg mx-auto">

@@ -2,43 +2,43 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
 
-export type ProjectType = 'Student' | 'Professor';
+export type RobotType = 'Student' | 'Professor';
 
-export interface Project {
+export interface Robot {
   id: string;
   title: string;
   description: string;
   creator: string;
-  type: ProjectType;
+  type: RobotType;
   genres: string[];
   postedAt: string;
-  status: 'Open' | 'Researching' | 'Reviewing';
+  status: 'Open' | 'Racing' | 'Inspecting';
   completion: number;
 }
 
-const DOMAINS = ['Web Development', 'Robotics', 'Cybersecurity', 'Data Science', 'AI/ML', 'Hardware', 'Aeronautics'];
+const DOMAINS = ['Web Development', 'Hardware', 'Cybersecurity', 'Data Science', 'AI/ML', 'Hardware', 'Aeronautics'];
 
-const mockProjects: Project[] = [
+const mockRobots: Robot[] = [
   {
     id: 'FN-1024',
-    title: 'Project Ichthys-X',
+    title: 'Robot Ichthys-X',
     description: 'Autonomous bionic underwater vehicle designed for deep-sea infrastructure maintenance and environmental monitoring. Features bio-mimetic propulsion and sonar mapping.',
     creator: 'Alex Rivers',
     type: 'Student',
-    genres: ['Robotics', 'Hardware'],
+    genres: ['Hardware', 'Hardware'],
     postedAt: '2H AGO',
     status: 'Open',
     completion: 65
   },
   {
     id: 'FN-1025',
-    title: 'Nexus Portal V2',
-    description: 'Enterprise-grade research management system built with high-performance architecture for cross-institutional collaboration and patent tracking.',
+    title: 'Hardware Portal V2',
+    description: 'High-speed autonomous line follower robot with PID control and custom chassis optimized for complex tracks.',
     creator: 'Dr. Sarah Chen',
     type: 'Professor',
     genres: ['Angular', '.NET Core', 'Web Development'],
     postedAt: 'NOW',
-    status: 'Reviewing',
+    status: 'Inspecting',
     completion: 88
   },
   {
@@ -49,7 +49,7 @@ const mockProjects: Project[] = [
     type: 'Student',
     genres: ['Aeronautics', 'AI/ML'],
     postedAt: '5H AGO',
-    status: 'Researching',
+    status: 'Racing',
     completion: 42
   },
   {
@@ -65,13 +65,13 @@ const mockProjects: Project[] = [
   }
 ];
 
-export const ProjectMarketplace: React.FC<{ onPostClick: () => void }> = ({ onPostClick }) => {
+export const RobotLeaderboard: React.FC<{ onPostClick: () => void }> = ({ onPostClick }) => {
   const [search, setSearch] = useState('');
   const [selectedGenres, setSelectedGenres] = useState<string[]>([]);
   const [typeFilter, setTypeFilter] = useState<'All' | 'Student' | 'Professor'>('All');
-  const [activeTab, setActiveTab] = useState<'Discover' | 'Analytics' | 'My Projects'>('Discover');
+  const [activeTab, setActiveTab] = useState<'Discover' | 'Analytics' | 'My Robots'>('Discover');
 
-  const filteredProjects = mockProjects.filter(project => {
+  const filteredRobots = mockRobots.filter(project => {
     const matchesSearch = project.title.toLowerCase().includes(search.toLowerCase()) || 
                           project.description.toLowerCase().includes(search.toLowerCase()) ||
                           project.id.toLowerCase().includes(search.toLowerCase());
@@ -96,13 +96,13 @@ export const ProjectMarketplace: React.FC<{ onPostClick: () => void }> = ({ onPo
               <span className="material-symbols-outlined text-black font-black">dashboard_customize</span>
             </div>
             <div>
-              <h3 className="text-white font-black text-sm uppercase tracking-tighter">NEXUS DASHBOARD</h3>
+              <h3 className="text-white font-black text-sm uppercase tracking-tighter">ROBOTICS DASHBOARD</h3>
               <p className="text-primary text-[8px] font-black tracking-[0.2em]">VERIFIED OPERATOR</p>
             </div>
           </div>
 
           <nav className="space-y-1">
-            {['Discover', 'Analytics', 'My Projects'].map((tab) => (
+            {['Discover', 'Analytics', 'My Robots'].map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab as any)}
@@ -151,7 +151,7 @@ export const ProjectMarketplace: React.FC<{ onPostClick: () => void }> = ({ onPo
                 <span className="text-[8px] font-black text-white/40 uppercase tracking-widest">Live Sync</span>
               </div>
             </div>
-            <p className="text-white/20 text-xs font-mono tracking-[0.3em] uppercase">ACCESSING FORGENEXUS MAIN-REPURTS // REG_SYS: 09-AE</p>
+            <p className="text-white/20 text-xs font-mono tracking-[0.3em] uppercase">ACCESSING ROBOTICS MAIN-REPURTS // REG_SYS: 09-AE</p>
           </div>
 
           <div className="flex items-center gap-4">
@@ -229,13 +229,13 @@ export const ProjectMarketplace: React.FC<{ onPostClick: () => void }> = ({ onPo
               {/* Data Grid */}
               <div className="order-1 xl:order-2 space-y-8">
                 <div className="flex items-center justify-between text-[9px] font-mono text-white/10 uppercase tracking-[0.3em]">
-                  <span>Showing {filteredProjects.length} Archive Nodes</span>
+                  <span>Showing {filteredRobots.length} Archive Nodes</span>
                   <span>Sort_By: PRIORITY_DESC</span>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <AnimatePresence mode="popLayout">
-                    {filteredProjects.map((project, idx) => (
+                    {filteredRobots.map((project, idx) => (
                       <motion.div
                         key={project.id}
                         layout

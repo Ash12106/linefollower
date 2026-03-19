@@ -3,14 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
 import { Input } from './Input';
 
-interface PostProjectModalProps {
+interface PostRobotModalProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
 const GENRES = ['Web Development', 'Robotics', 'Cybersecurity', 'Data Science', 'AI/ML', 'Hardware', 'Aeronautics'];
 
-export const PostProjectModal: React.FC<PostProjectModalProps> = ({ isOpen, onClose }) => {
+export const PostRobotModal: React.FC<PostRobotModalProps> = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -48,7 +48,7 @@ export const PostProjectModal: React.FC<PostProjectModalProps> = ({ isOpen, onCl
           <div className="space-y-10 relative z-10">
             <div className="space-y-3">
               <h2 className="text-4xl md:text-5xl font-black font-display uppercase italic text-white tracking-tighter leading-none">
-                Post New Project
+                Post New Robot
               </h2>
               <p className="text-white/30 text-[10px] font-black uppercase tracking-[0.4em] italic mb-12">REGISTRY INITIALIZATION // RECRUITMENT ACTIVE</p>
             </div>
@@ -56,14 +56,14 @@ export const PostProjectModal: React.FC<PostProjectModalProps> = ({ isOpen, onCl
             <form className="space-y-8" onSubmit={(e) => e.preventDefault()}>
               <div className="space-y-6">
                 <Input 
-                  label="Project Title" 
+                  label="Robot Title" 
                   placeholder="ARCHIVE_ID: X-77..." 
                   value={formData.title}
                   onChange={(e) => setFormData({...formData, title: e.target.value})}
                 />
                 
                 <div className="space-y-3">
-                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/60 px-2">Project Classification</label>
+                  <label className="text-[10px] font-black uppercase tracking-[0.3em] text-primary/60 px-2">Robot Classification</label>
                   <textarea 
                     placeholder="DESCRIBE THE CORE INNOVATION..."
                     className="w-full h-32 bg-white/5 border border-white/10 rounded-2xl p-6 text-white text-sm focus:outline-none focus:border-primary/50 transition-colors uppercase font-mono placeholder:text-white/10 resize-none"

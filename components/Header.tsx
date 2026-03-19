@@ -28,7 +28,7 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
             <div className="relative z-10 w-12 h-12 rounded-full overflow-hidden border border-white/10 bg-black/40 shadow-[0_0_15px_rgba(212,175,55,0.2)]">
               <img 
                 src="/logo.png" 
-                alt="Forge Nexus Logo" 
+                alt="ForgeNexus Logo" 
                 className="w-full h-full object-cover brightness-110 contrast-110"
               />
             </div>
@@ -45,7 +45,7 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
 
         <nav className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
-            {['About', 'Focus', 'Team', 'Gallery', 'Support', 'Marketplace'].map((item) => (
+            {['Rules', 'Track', 'Gallery', 'Sponsors', 'Register'].map((item) => (
               <a 
                 key={item} 
                 href={`#${item.toLowerCase()}`} 
@@ -60,7 +60,7 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
           <div className="h-6 w-[1px] bg-white/10 mx-4"></div>
           
           <Button variant="nexus" onClick={onJoinClick} className="px-10 py-3.5 rounded-xl scale-95 uppercase font-black text-[10px] tracking-[0.35em]">
-            Join Nexus
+            Register Team
           </Button>
         </nav>
 
@@ -86,7 +86,7 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-6 pb-6 space-y-4 border-t border-white/5 pt-6 bg-black/40 backdrop-blur-xl rounded-b-3xl"
           >
-            {['About', 'Focus', 'Team', 'Gallery', 'Support', 'Marketplace'].map((item, i) => (
+            {['Rules', 'Track', 'Gallery', 'Sponsors', 'Register'].map((item, i) => (
               <motion.a 
                 key={item}
                 initial={{ opacity: 0, x: -10 }}
@@ -100,7 +100,7 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
               </motion.a>
             ))}
             <Button variant="pulse" className="w-full justify-center mt-4 py-5 rounded-2xl" onClick={onJoinClick}>
-              Join Nexus now
+              Register Team
             </Button>
           </motion.div>
         )}

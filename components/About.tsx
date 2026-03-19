@@ -38,12 +38,11 @@ export const About: React.FC = () => {
           </motion.div>
           
           <h2 className="text-6xl md:text-9xl font-black font-display uppercase italic tracking-[ -0.05em] text-white leading-none">
-            Our <span className="text-gradient">Core</span> <br />
-            Philosophy
+            Competition <br /><span className="text-gradient">Rules</span>
           </h2>
 
           <p className="max-w-2xl text-white/40 font-light text-sm leading-relaxed uppercase tracking-[0.3em] italic">
-            DEFINING THE ARCHITECTURE OF INTERDISCIPLINARY EXCELLENCE.
+            DEFINING THE ARCHITECTURE OF AUTONOMOUS NAVIGATION.
           </p>
         </div>
 
@@ -63,19 +62,18 @@ export const About: React.FC = () => {
             <div className="flex-1 space-y-12 relative z-10 text-center lg:text-left">
                <div className="inline-flex items-center gap-4">
                   <div className="h-px w-10 bg-primary/40"></div>
-                  <div className="text-primary font-mono text-[10px] uppercase tracking-[0.6em] font-black">STRATEGIC_VISION::INIT</div>
+                  <div className="text-primary font-mono text-[10px] uppercase tracking-[0.6em] font-black">CHALLENGE::INIT</div>
                </div>
                
                <h3 className="text-4xl md:text-5xl lg:text-7xl font-black font-display text-white leading-[0.95] tracking-tighter italic uppercase">
-                  Empowering the <br />
-                  <span className="text-gradient">Next Gen</span> <br />
-                  of Innovators
+                  Navigate the <br />
+                  <span className="text-gradient">Complex Track</span>
                </h3>
                
                <div className="relative pl-0 lg:pl-10">
                  <div className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-primary/60 via-primary/10 to-transparent hidden lg:block"></div>
                  <p className="text-white/60 text-lg md:text-xl font-light leading-relaxed italic uppercase tracking-[0.1em] max-w-2xl">
-                   "Building a multidisciplinary ecosystem that transforms academic curiosity into global breakthroughs, patents, and real-world impact."
+                   "Design, build, and program an autonomous robot capable of following a complex black line on a white surface as fast as possible."
                  </p>
                </div>
             </div>
@@ -120,18 +118,18 @@ export const About: React.FC = () => {
               
               <div className="flex flex-col items-center mb-24 relative z-10">
                 <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.4em] shadow-[0_0_40px_rgba(var(--primary-rgb),0.1)]">
-                  Mission_Statement::LOADED
+                  COMPETITION_RULES::LOADED
                 </div>
               </div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-16 gap-y-20 relative z-10">
                 {[
-                  { icon: 'biotech', text: "Conduct high-impact research alongside expert faculty catalysts." },
-                  { icon: 'description', text: "Archive scholarly publications, patents, and high-fidelity products." },
-                  { icon: 'rocket', text: "Accelerate startups and national-level innovation recognition." },
-                  { icon: 'public', text: "Command representation in global elite research forums." },
-                  { icon: 'hub', text: "Neural-link inter-departmental collaboration networks." },
-                  { icon: 'engineering', text: "Engineering excellence through iterative breakthroughs." }
+                  { icon: 'speed', text: "Complete the track in the shortest time possible." },
+                  { icon: 'route', text: "Robot must strictly follow the continuous black line." },
+                  { icon: 'memory', text: "Completely autonomous operation without external control." },
+                  { icon: 'warning', text: "No modifying or damaging the track surface." },
+                  { icon: 'square_foot', text: "Maximum robot dimensions: 20cm x 20cm." },
+                  { icon: 'engineering', text: "Teams can tune parameters between trial runs." }
                 ].map((item, i) => (
                   <div key={i} className="flex flex-col items-center text-center gap-8 group/item">
                     <div className="relative">
@@ -156,17 +154,17 @@ export const About: React.FC = () => {
         <div className="flex flex-col animate-in fade-in slide-in-from-bottom-8 duration-1000">
           <div className="flex justify-center mb-16">
              <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.4em]">
-                CORE_VALUES::INTACT
+                ROBOT_SPECS::REQUIREMENTS
               </div>
           </div>
           
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 w-full max-w-7xl mx-auto">
             {[
-              { title: "Innovation", desc: "Creative thinking and novel approaches across all disciplines.", icon: "lightbulb" },
-              { title: "Collaboration", desc: "Neuro-link teamwork between student and faculty catalysts.", icon: "handshake" },
-              { title: "Excellence", desc: "Maintaining high-fidelity standards in all research endeavors.", icon: "star" },
-              { title: "Impact", desc: "Solutions that benefit society through engineering breakthroughs.", icon: "public" },
-              { title: "Integrity", desc: "Upholding ethical research and interdisciplinary cooperation.", icon: "verified" }
+              { title: "Sensors", desc: "Use IR or optical sensors to detect the black line on white surface.", icon: "sensors" },
+              { title: "Design", desc: "No larger than 20x20cm footprint. Weight limits apply.", icon: "architecture" },
+              { title: "Power", desc: "On-board power supply only. Max 12V DC system.", icon: "battery_charging_full" },
+              { title: "Control", desc: "Microcontroller based. No external communication allowed.", icon: "memory" },
+              { title: "Drive", desc: "Differential drive or omnidirectional wheels permitted.", icon: "settings" }
             ].map((val, i) => (
               <div key={i} className="glass-card p-8 rounded-[2rem] border-primary/5 hover:border-primary/40 bg-white/[0.02] transition-all group overflow-hidden relative flex flex-col items-center text-center justify-center min-h-[260px]">
                 <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/10 transition-all duration-700" />

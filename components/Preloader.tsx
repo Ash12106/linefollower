@@ -23,7 +23,7 @@ export const Preloader: React.FC = () => {
       { p: 35, s: 'SYNC::PORTAL_NEURAL_LINK' },
       { p: 55, s: 'RUNNING::LAB_INFRASTRUCTURE_DIAGNOSTICS' },
       { p: 75, s: 'FETCHING::DATA_STREAM_LN7' },
-      { p: 90, s: 'NEXUS::ACCESS_GRANTED' },
+      { p: 90, s: 'ROBOTICS::ACCESS_GRANTED' },
     ];
 
     const statusInterval = setInterval(() => {
@@ -78,7 +78,7 @@ export const Preloader: React.FC = () => {
         >
           <img 
             src="/logo.png" 
-            alt="Forge Nexus" 
+            alt="ForgeNexus" 
             className="w-full h-full object-cover brightness-100"
           />
           

@@ -41,7 +41,7 @@ export const PortalCard: React.FC<PortalCardProps> = ({ config, delay = 0 }) => 
             <span className="material-symbols-outlined text-4xl leading-none group-hover:drop-shadow-[0_0_10px_rgba(212,175,55,0.5)]">{config.icon}</span>
           </motion.div>
           <div className="text-right">
-            <span className={`text-[10px] font-black uppercase tracking-[0.4em] opacity-40 block mb-1`}>FORGENEXUS GATEWAY</span>
+            <span className={`text-[10px] font-black uppercase tracking-[0.4em] opacity-40 block mb-1`}>ROBOTICS GATEWAY</span>
             <span className={`text-[11px] font-black uppercase tracking-[0.3em] ${textColorClass}`}>
               {config.subtitle}
             </span>

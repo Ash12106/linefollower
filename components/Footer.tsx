@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
                   <img 
                     src="/logo.png" 
                     alt="Logo" 
-                    className="w-12 h-12 mix-blend-screen brightness-125 contrast-125 transition-transform duration-500 group-hover:scale-110 [mask-image:radial-gradient(circle,black_60%,transparent_100%)] drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]" 
+                    className="w-12 h-12 mix-blend-screen brightness-125 contrast-125 transition-transform duration-500 group-hover:scale-110 [mask-image:radial-gradient(circle,black_60%,transparent_100%)] drop-shadow-[0_0_15px_rgba(212,175,55,0.4)]"
                   />
                   <div className="absolute inset-0 bg-primary/20 blur-lg rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </div>
@@ -57,7 +57,7 @@ export const Footer: React.FC = () => {
                 </div>
               </div>
               <p className="text-white/40 text-sm leading-relaxed font-light pr-4">
-                Redefining the boundary between academic research and viable intellectual property at Vidhyavardhaka College of Engineering.
+                Redefining autonomous robotics at Vidhyavardhaka College of Engineering.
               </p>
             </div>
             
@@ -161,7 +161,7 @@ export const Footer: React.FC = () => {
               <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60">Registry</h4>
             </div>
             <ul className="space-y-4">
-               {['Research Portal', 'Patent Registry', 'Technical Support', 'Privacy Policy'].map(item => (
+               {['Competition Rules', 'Track Design', 'Judging Criteria', 'Privacy Policy'].map(item => (
                  <li key={item}>
                    <a href="#" className="text-xs text-white/40 hover:text-primary transition-all flex items-center gap-3 group">
                      <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:scale-150 transition-transform"></span>

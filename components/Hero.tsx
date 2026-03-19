@@ -19,7 +19,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
           <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
-        VidhyaVardhaka ForgeNexus Portal
+        ForgeNexus Presents
       </motion.div>
       
       <motion.div
@@ -28,8 +28,8 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
         transition={{ delay: 0.2, duration: 0.8 }}
       >
         <h2 className="text-6xl md:text-9xl font-black tracking-tighter mb-8 uppercase font-display leading-[0.9] text-white italic">
-          Forge Your <br />
-          <span className="text-gradient">Innovations</span>
+          Circuit <br />
+          <span className="text-gradient">Drift'26</span>
         </h2>
       </motion.div>
       
@@ -39,7 +39,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
         transition={{ delay: 0.4, duration: 1 }}
         className="text-white/40 text-sm md:text-lg max-w-2xl mx-auto leading-relaxed font-light uppercase tracking-[0.3em] italic mb-12"
       >
-        INNOVATION HUB // THE PREMIER HUB FOR PATENTS, RESEARCH, AND CROSS-DISCIPLINARY EXCELLENCE AT VVCE.
+        CIRCUIT DRIFT'26 // THE PREMIER AUTONOMOUS LINE FOLLOWING ROBOTICS COMPETITION AT VVCE.
       </motion.p>
 
       <motion.div 
@@ -53,18 +53,7 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
           onClick={onJoinClick} 
           className="px-14 py-8 text-xl tracking-[0.8em] font-black italic rounded-[2rem] transition-transform hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(var(--primary-rgb),0.1)] hover:shadow-[0_0_80px_rgba(var(--primary-rgb),0.2)]"
         >
-          JOIN NEXUS NOW
-        </Button>
-
-        <Button 
-          variant="nexus" 
-          onClick={() => window.open('https://chat.whatsapp.com/LUToO79YiLTKFvswzI5D9p?mode=gi_t', '_blank')}
-          className="px-14 py-8 text-xl tracking-[0.8em] font-black italic rounded-[2rem] transition-transform hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(var(--primary-rgb),0.05)] hover:shadow-[0_0_80px_rgba(var(--primary-rgb),0.1)] opacity-90 hover:opacity-100"
-        >
-          <div className="flex items-center gap-3">
-            <span className="material-symbols-outlined text-xl">diversity_3</span>
-            <span>COMMUNITY</span>
-          </div>
+          REGISTER TEAM
         </Button>
       </motion.div>
 

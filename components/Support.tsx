@@ -4,29 +4,29 @@ import { Button } from './Button';
 
 const supportChannels = [
   {
-    title: "Mentorship",
-    description: "Connect with faculty experts for patent filing and high-impact R&D guidance.",
-    icon: "engineering",
-    action: "CONTACT US",
+    title: "Competition Rules",
+    description: "Get clarifications on track dimensions, robot specs, and judging criteria.",
+    icon: "gavel",
+    action: "READ RULES",
     email: "forgenexus@vvce.ac.in",
     status: "AVAILABLE",
-    tag: "FACULTY CORE",
+    tag: "GUIDELINES",
     freq: "ID: 01"
   },
   {
     title: "Technical Support",
-    description: "Assistance with VR/AR hardware, AI compute resources, and lab infrastructure.",
-    icon: "terminal",
-    action: "CONTACT US",
+    description: "Assistance with sensor calibration, microcontrollers, and hardware troubleshooting.",
+    icon: "memory",
+    action: "CONTACT TECH",
     email: "forgenexus@vvce.ac.in",
     status: "ACTIVE",
-    tag: "INFRASTRUCTURE",
+    tag: "HARDWARE",
     freq: "ID: 02"
   },
   {
-    title: "Industrial Bridge",
-    description: "Propose industrial collaborations or inter-departmental research initiatives.",
-    icon: "hub",
+    title: "Event Sponsorship",
+    description: "Partner with Circuit Drift'26 to support the next generation of robotics innovators.",
+    icon: "handshake",
     action: "PARTNER WITH US",
     email: "forgenexus@vvce.ac.in",
     status: "READY",
@@ -75,7 +75,7 @@ export default function Support() {
               transition={{ delay: 0.4 }}
               className="max-w-2xl text-white/40 font-light text-sm leading-relaxed uppercase tracking-[0.3em] italic"
             >
-              ADMINISTRATIVE SUPPORT // COORDINATING RESOURCE ALLOCATION AND MENTORSHIP FOR INNOVATORS.
+              COMPETITION SUPPORT // COORDINATING TRACK ACCESS AND MENTORSHIP FOR COMPETITORS.
             </motion.p>
           </div>
         </div>

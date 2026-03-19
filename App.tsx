@@ -8,30 +8,29 @@ import { Footer } from './components/Footer';
 import { PortalConfig } from './types';
 import Galaxy from './components/Galaxy';
 import { JoinModal } from './components/JoinModal';
-import { Team } from './components/Team';
 import { Focus } from './components/Focus';
 import { Gallery } from './components/Gallery';
 import Support from './components/Support';
 import { Preloader } from './components/Preloader';
-import { ProjectMarketplace } from './components/ProjectMarketplace';
-import { PostProjectModal } from './components/PostProjectModal';
+import { RobotLeaderboard } from './components/RobotLeaderboard';
+import { PostRobotModal } from './components/PostRobotModal';
 import { Button } from './components/Button';
 
 const studentConfig: PortalConfig = {
   role: 'student',
-  title: 'The Innovator',
-  subtitle: 'Student Gateway',
-  description: 'Forge your legacy. Upload research, collaborate on breakthroughs, and track your patent journey.',
-  icon: 'school',
+  title: 'The Challenger',
+  subtitle: 'Team Gateway',
+  description: 'Register your squad. Submit your robot specifications, view track details, and dominate the circuit.',
+  icon: 'speed',
   colorClass: 'primary'
 };
 
 const facultyConfig: PortalConfig = {
   role: 'faculty',
-  title: 'The Architect',
-  subtitle: 'Faculty Gateway',
-  description: 'Review the future. Evaluate submissions, mentor innovators, and oversee the intellectual landscape.',
-  icon: 'account_balance',
+  title: 'The Referee',
+  subtitle: 'Judge Gateway',
+  description: 'Evaluate team configurations. Manage track runs, enforce technical specs, and oversee the leaderboard.',
+  icon: 'gavel',
   colorClass: 'secondary'
 };
 
@@ -69,7 +68,6 @@ const App: React.FC = () => {
 
   // Parallax offsets for different sections to create depth
   const yAbout = useTransform(smoothProgress, [0, 0.5], [0, -50]);
-  const yTeam = useTransform(smoothProgress, [0, 0.7], [0, -100]);
   const yGallery = useTransform(smoothProgress, [0.1, 0.75], [0, -110]);
   const yFocus = useTransform(smoothProgress, [0.1, 0.8], [0, -120]);
   const ySupport = useTransform(smoothProgress, [0.1, 1], [0, -140]);
@@ -136,12 +134,12 @@ const App: React.FC = () => {
                   <div className="flex items-center gap-8 relative z-10">
                     <div className="w-20 h-20 rounded-3xl bg-primary flex items-center justify-center shadow-[0_0_40px_rgba(var(--primary-rgb),0.3)]">
                       <span className="material-symbols-outlined text-black text-4xl font-black">
-                        {userRole === 'student' ? 'school' : 'account_balance'}
+                        {userRole === 'student' ? 'smart_toy' : 'gavel'}
                       </span>
                     </div>
                     <div>
                       <h2 className="text-4xl font-black text-white italic tracking-tighter uppercase leading-none mb-3">
-                        {userRole === 'student' ? 'Innovator' : 'Architect'} <span className="text-primary italic">Terminal</span>
+                        {userRole === 'student' ? 'Team' : 'Judge'} <span className="text-primary italic">Terminal</span>
                       </h2>
                       <div className="flex items-center gap-4">
                         <span className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[9px] font-black text-white/40 uppercase tracking-widest flex items-center gap-2">
@@ -169,7 +167,7 @@ const App: React.FC = () => {
                     </button>
                   </div>
                 </div>
-                <ProjectMarketplace onPostClick={() => setIsPostModalOpen(true)} />
+                <RobotLeaderboard onPostClick={() => setIsPostModalOpen(true)} />
               </motion.section>
             ) : (
               <motion.div 
@@ -196,14 +194,6 @@ const App: React.FC = () => {
             className="pointer-events-auto w-full flex justify-center mb-32 px-4 scroll-mt-24"
           >
             <Focus onJoinClick={() => setIsJoinModalOpen(true)} />
-          </motion.section>
-
-          <motion.section 
-            id="team" 
-            style={{ y: yTeam }}
-            className="pointer-events-auto w-full flex justify-center mb-32 px-4 scroll-mt-24"
-          >
-            <Team />
           </motion.section>
 
           <motion.section 
@@ -258,7 +248,7 @@ const App: React.FC = () => {
         }}
       />
 
-      <PostProjectModal 
+      <PostRobotModal 
         isOpen={isPostModalOpen} 
         onClose={() => setIsPostModalOpen(false)} 
       />
