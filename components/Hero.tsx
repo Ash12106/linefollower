@@ -42,6 +42,23 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
         CIRCUIT DRIFT'26 // THE PREMIER AUTONOMOUS LINE FOLLOWING ROBOTICS COMPETITION AT VVCE.
       </motion.p>
 
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.3, duration: 1 }}
+        className="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] mb-12 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(var(--primary-rgb),0.15)] bg-black/20 backdrop-blur-sm group pointer-events-auto"
+      >
+        <div className="absolute inset-0 z-0 bg-gradient-to-t from-black/80 via-transparent to-transparent pointer-events-none"></div>
+        <iframe
+          title="Line Follower Robot"
+          frameBorder="0"
+          allowFullScreen
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          className="w-full h-full object-cover scale-[1.05] group-hover:scale-100 transition-transform duration-1000"
+          src="https://sketchfab.com/models/11bf9b71d5f34517b404d12c74ddb506/embed?autostart=1&camera=0&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_theme=dark&dnt=1"
+        ></iframe>
+      </motion.div>
+
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
