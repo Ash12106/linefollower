@@ -44,17 +44,18 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
         </div>
 
         <nav className="hidden md:flex items-center gap-10">
-          {['About', 'Focus', 'Team', 'Gallery', 'Support'].map((item) => (
-            <motion.a 
-              key={item}
-              href={`#${item.toLowerCase()}`} 
-              whileHover={{ y: -2 }}
-              className="relative text-[12px] font-black text-white/60 hover:text-white transition-colors uppercase tracking-[0.3em] py-2 group/nav"
-            >
-              {item}
-              <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover/nav:w-full"></span>
-            </motion.a>
-          ))}
+          <div className="flex items-center gap-8">
+            {['About', 'Focus', 'Team', 'Gallery', 'Support', 'Marketplace'].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`} 
+                className="relative text-[12px] font-black text-white/60 hover:text-white transition-colors uppercase tracking-[0.3em] py-2 group/nav"
+              >
+                {item}
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover/nav:w-full"></span>
+              </a>
+            ))}
+          </div>
           
           <div className="h-6 w-[1px] bg-white/10 mx-4"></div>
           
@@ -80,12 +81,12 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
       <AnimatePresence>
         {isMenuOpen && (
           <motion.div 
-            initial={{ opacity: 0, y: 10, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 10, scale: 0.95 }}
-            className="md:hidden absolute top-28 left-6 right-6 p-8 rounded-[2.5rem] bg-black/90 border border-white/10 backdrop-blur-3xl shadow-2xl flex flex-col gap-6"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            className="md:hidden mt-6 pb-6 space-y-4 border-t border-white/5 pt-6 bg-black/40 backdrop-blur-xl rounded-b-3xl"
           >
-             {['About', 'Focus', 'Team', 'Gallery', 'Support'].map((item, i) => (
+            {['About', 'Focus', 'Team', 'Gallery', 'Support', 'Marketplace'].map((item, i) => (
               <motion.a 
                 key={item}
                 initial={{ opacity: 0, x: -10 }}
