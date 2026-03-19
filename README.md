@@ -1,14 +1,13 @@
-# ForgeNexus Institutional Portal
+# Circuit Drift'26 - Line Follower Robotics Competition
 
-The **ForgeNexus Institutional Portal** is a high-fidelity, interactive web application developed for **Vidhyavardhaka College of Engineering (VVCE)**. It serves as a central hub for student innovation, faculty oversight, and technical collaboration, using a professional "Nexus" aesthetic.
+The **Circuit Drift'26 Landing Page** is a high-fidelity, interactive web application acting as the central hub for the premier line-follower robotics competition hosted by the **ForgeNexus Robotics Club** at **Vidhyavardhaka College of Engineering (VVCE)**.
 
 ## 🚀 Key Features
 
-- **Interactive 3D Innovation Gallery**: An immersive, panoramic 3D dome experience using `@use-gesture/react` and `ogl` to showcase technical achievements and projects.
-- **Dynamic Portal Gateways**: Role-based access for Students ("The Innovator") and Faculty ("The Architect") that appear only when requested.
-- **Institutional Branding**: Bold, high-contrast typography reflecting the identity of **Vidhyavardhaka College of Engineering**.
+- **Competition Details**: Essential rules, track domains, and prize pool breakdowns (₹20,000 / ₹15,000 / ₹10,000).
+- **Immersive Visuals**: High-contrast, hardware-accelerated animations using Framer Motion and an interactive 3D gallery to showcase technical achievements.
 - **Modern UI Stack**: Built with **React 19**, **Tailwind CSS v4**, and **Framer Motion** for fluid animations and a premium glassmorphic feel.
-- **Responsive Design**: Fully optimized for both high-end desktop environments and mobile views.
+- **Responsive Registration Portal**: Fully optimized mobile-responsive sections with direct calls to action for easy team registrations and support access.
 
 ## 🛠️ Tech Stack
 
@@ -29,8 +28,8 @@ Ensure you have [Node.js](https://nodejs.org/) installed (version 18.x or later 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Ash12106/FN_Website.git
-   cd FN_Website
+   git clone https://github.com/Ash12106/linefollower.git
+   cd linefollower
    ```
 
 2. Install dependencies:
@@ -64,7 +63,7 @@ The output will be generated in the `dist/` directory.
 To replace the placeholder images in the Innovation Gallery or Student Core sections:
 
 - **Innovation Gallery**: Place your `.jpg` or `.png` images in `/public/gallery/` and name them `gallery_1.jpg`, `gallery_2.jpg`, etc.
-- **Team Section**: Place faculty and student core images in `/public/team/`.
+- **Rulebook**: Replace the dummy file by placing `rulebook.pdf` at the root of the `/public` directory.
 
 ---
 Created by [Ash12106](https://github.com/Ash12106)
