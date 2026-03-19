@@ -134,7 +134,7 @@ export default function Support() {
                   <Button 
                     variant="nexus" 
                     className="w-full py-6 text-sm tracking-[0.4em] italic font-black"
-                    onClick={() => window.location.href = `mailto:${channel.email}`}
+                    onClick={() => alert("Email portal will be activated soon!")}
                   >
                     {channel.action}
                   </Button>

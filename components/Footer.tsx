@@ -53,11 +53,11 @@ export const Footer: React.FC = () => {
                 </div>
                 <div className="flex flex-col">
                   <span className="font-display font-black text-2xl tracking-[0.1em] text-white">FORGE<span className="text-primary">NEXUS</span></span>
-                  <span className="text-[8px] uppercase tracking-[0.4em] text-white/30 font-bold">Innovation Forge</span>
+                  <span className="text-[8px] uppercase tracking-[0.4em] text-white/30 font-bold">Circuit Drift'26</span>
                 </div>
               </div>
               <p className="text-white/40 text-sm leading-relaxed font-light pr-4">
-                Redefining autonomous robotics at Vidhyavardhaka College of Engineering.
+                The ultimate line follower robotics competition hosted by ForgeNexus at Vidhyavardhaka College of Engineering.
               </p>
             </div>
             
@@ -161,11 +161,26 @@ export const Footer: React.FC = () => {
               <h4 className="text-[10px] font-bold uppercase tracking-[0.4em] text-white/60">Registry</h4>
             </div>
             <ul className="space-y-4">
-               {['Competition Rules', 'Track Design', 'Judging Criteria', 'Privacy Policy'].map(item => (
-                 <li key={item}>
-                   <a href="#" className="text-xs text-white/40 hover:text-primary transition-all flex items-center gap-3 group">
+               {[
+                 { label: 'Competition Rules', href: '#about' },
+                 { label: 'Challenge Domains', href: '#focus' },
+                 { label: 'Event Gallery', href: '#gallery' },
+                 { label: 'Technical Support', href: '#support' }
+               ].map(item => (
+                 <li key={item.label}>
+                   <a 
+                      href={item.href} 
+                      onClick={(e) => {
+                        const target = document.querySelector(item.href);
+                        if(target) {
+                           e.preventDefault();
+                           target.scrollIntoView({ behavior: 'smooth' });
+                        }
+                      }}
+                      className="text-xs text-white/40 hover:text-primary transition-all flex items-center gap-3 group"
+                   >
                      <span className="w-1 h-1 rounded-full bg-primary/40 group-hover:scale-150 transition-transform"></span>
-                     {item}
+                     {item.label}
                    </a>
                  </li>
                ))}
@@ -185,8 +200,8 @@ export const Footer: React.FC = () => {
             </div>
           </div>
           
-          <div className="text-xs uppercase tracking-[0.3em] font-medium text-white/30">
-            © 2026 Vidhyavardhaka College of Engineering. All Rights Reserved.
+          <div className="text-xs uppercase tracking-[0.3em] font-medium text-white/30 text-center md:text-right">
+            © 2026 ForgeNexus Robotics Club. <br className="md:hidden" />All Rights Reserved.
           </div>
         </div>
       </div>

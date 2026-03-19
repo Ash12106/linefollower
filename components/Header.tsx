@@ -45,13 +45,25 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
 
         <nav className="hidden md:flex items-center gap-10">
           <div className="flex items-center gap-8">
-            {['Rules', 'Gallery', 'Register'].map((item) => (
+            {[
+              { label: 'Home', href: '#' },
+              { label: 'Rules', href: '#about' },
+              { label: 'Domains', href: '#focus' },
+              { label: 'Gallery', href: '#gallery' },
+              { label: 'Support', href: '#support' }
+            ].map((item) => (
               <a 
-                key={item} 
-                href={`#${item.toLowerCase()}`} 
+                key={item.label} 
+                href={item.href} 
+                onClick={(e) => {
+                  if (item.href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                }}
                 className="relative text-[12px] font-black text-white/60 hover:text-white transition-colors uppercase tracking-[0.3em] py-2 group/nav"
               >
-                {item}
+                {item.label}
                 <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-primary transition-all duration-300 group-hover/nav:w-full"></span>
               </a>
             ))}
@@ -59,8 +71,20 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
           
           <div className="h-6 w-[1px] bg-white/10 mx-4"></div>
           
-          <Button variant="nexus" onClick={onJoinClick} className="px-10 py-3.5 rounded-xl scale-95 uppercase font-black text-[10px] tracking-[0.35em]">
-            Register Team
+          <Button 
+            variant="nexus" 
+            onClick={() => {
+              // Smooth scroll to support/contact section instead of opening a modal
+              const supportSection = document.getElementById('support');
+              if (supportSection) {
+                supportSection.scrollIntoView({ behavior: 'smooth' });
+              } else {
+                alert("Registration will open soon!");
+              }
+            }} 
+            className="px-10 py-3.5 rounded-xl scale-95 uppercase font-black text-[10px] tracking-[0.35em]"
+          >
+            Register Now
           </Button>
         </nav>
 
@@ -86,21 +110,45 @@ export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden mt-6 pb-6 space-y-4 border-t border-white/5 pt-6 bg-black/40 backdrop-blur-xl rounded-b-3xl"
           >
-            {['Rules', 'Gallery', 'Register'].map((item, i) => (
+            {[
+              { label: 'Home', href: '#' },
+              { label: 'Rules', href: '#about' },
+              { label: 'Domains', href: '#focus' },
+              { label: 'Gallery', href: '#gallery' },
+              { label: 'Support', href: '#support' }
+            ].map((item, i) => (
               <motion.a 
-                key={item}
+                key={item.label}
                 initial={{ opacity: 0, x: -10 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: i * 0.1 }}
-                href={`#${item.toLowerCase()}`} 
-                className="text-xs font-black text-white/70 hover:text-primary transition-colors uppercase tracking-[0.4em] py-4 border-b border-white/5"
-                onClick={() => setIsMenuOpen(false)}
+                href={item.href} 
+                className="text-xs font-black text-white/70 hover:text-primary transition-colors uppercase tracking-[0.4em] py-4 border-b border-white/5 block"
+                onClick={(e) => {
+                  if (item.href === '#') {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }
+                  setIsMenuOpen(false);
+                }}
               >
-                {item}
+                {item.label}
               </motion.a>
             ))}
-            <Button variant="pulse" className="w-full justify-center mt-4 py-5 rounded-2xl" onClick={onJoinClick}>
-              Register Team
+            <Button 
+              variant="pulse" 
+              className="w-full justify-center mt-4 py-5 rounded-2xl" 
+              onClick={() => {
+                setIsMenuOpen(false);
+                const supportSection = document.getElementById('support');
+                if (supportSection) {
+                  supportSection.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  alert("Registration will open soon!");
+                }
+              }}
+            >
+              Register Now
             </Button>
           </motion.div>
         )}

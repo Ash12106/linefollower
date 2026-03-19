@@ -186,6 +186,40 @@ export const About: React.FC = () => {
             ))}
           </div>
         </div>
+
+        {/* Download Rulebook Section */}
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="flex justify-center pt-8"
+        >
+          <a
+            href="/rulebook.pdf"
+            download
+            className="group relative flex items-center justify-center md:justify-start gap-6 px-8 py-5 md:px-10 md:py-6 rounded-[2.5rem] bg-primary/[0.02] hover:bg-primary/[0.08] border border-primary/20 hover:border-primary/60 transition-all duration-500 overflow-hidden shadow-[0_0_40px_rgba(var(--primary-rgb),0.05)] hover:shadow-[0_0_60px_rgba(var(--primary-rgb),0.2)] hover:-translate-y-2 cursor-pointer w-full md:w-auto"
+            onClick={(e) => {
+               // Prevent default since we don't have the file yet, act as a demo!
+               e.preventDefault();
+               alert('Rulebook PDF will be available to download soon!');
+            }}
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
+            
+            <div className="w-14 h-14 md:w-16 md:h-16 rounded-full bg-black border border-primary/40 flex items-center justify-center text-primary group-hover:scale-110 group-hover:bg-primary/20 transition-all duration-500 shadow-xl group-hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)] relative z-10 shrink-0">
+              <span className="material-symbols-outlined text-2xl md:text-3xl group-hover:-translate-y-1 transition-transform">download</span>
+            </div>
+            
+            <div className="flex flex-col text-left relative z-10">
+              <span className="text-[9px] md:text-[10px] font-mono text-primary/80 uppercase tracking-[0.4em] mb-1">Official Document</span>
+              <span className="text-xl md:text-2xl font-black font-display text-white italic uppercase tracking-wider group-hover:text-primary transition-colors leading-none mb-1.5 md:mb-2">
+                Download Rulebook
+              </span>
+              <span className="text-[10px] md:text-xs text-white/40 font-light uppercase tracking-[0.2em]">PDF Format // 2.4 MB</span>
+            </div>
+          </a>
+        </motion.div>
+
       </div>
       
       {/* High-Tech Section Divider */}

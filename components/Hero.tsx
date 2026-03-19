@@ -42,31 +42,6 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
         CIRCUIT DRIFT'26 // THE PREMIER AUTONOMOUS LINE FOLLOWING ROBOTICS COMPETITION AT VVCE.
       </motion.p>
 
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.3, duration: 1 }}
-        className="relative w-full max-w-4xl mx-auto h-[400px] md:h-[500px] mb-12 rounded-3xl overflow-hidden border border-white/10 shadow-[0_0_100px_rgba(var(--primary-rgb),0.15)] bg-black/40 backdrop-blur-sm group pointer-events-auto [perspective:1000px] flex justify-center"
-      >
-        {/* Animated track line under the robot */}
-        <div className="absolute inset-0 flex justify-center z-0 overflow-hidden pointer-events-none items-end">
-          <div className="w-24 md:w-40 h-[200%] bg-black/80 shadow-[0_0_50px_rgba(0,0,0,1)] border-x border-white/10 origin-bottom [transform:rotateX(60deg)_translateY(20%)] flex justify-center">
-            {/* The gold animated line */}
-            <div className="h-full w-2 animate-moving-track opacity-90 shadow-[0_0_20px_rgba(212,175,55,1)]"></div>
-          </div>
-        </div>
-
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black/90 via-transparent to-black/80 pointer-events-none"></div>
-        <iframe
-          title="Line Follower Robot"
-          frameBorder="0"
-          allowFullScreen
-          allow="autoplay; fullscreen; xr-spatial-tracking"
-          className="relative z-20 w-full h-full object-cover scale-[1.05] group-hover:scale-100 transition-transform duration-1000"
-          src="https://sketchfab.com/models/11bf9b71d5f34517b404d12c74ddb506/embed?autostart=1&camera=0&transparent=1&ui_animations=0&ui_infos=0&ui_stop=0&ui_inspector=0&ui_watermark_link=0&ui_watermark=0&ui_hint=0&ui_theme=dark&dnt=1"
-        ></iframe>
-      </motion.div>
-
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -97,6 +72,56 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
           <span className="text-primary font-black">PLATFORM:</span> ACTIVE
         </div>
       </motion.div>
+
+      {/* Prize Pool Section in Hero */}
+      <motion.div 
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.8, duration: 1 }}
+        className="mt-24 md:mt-32 w-full flex flex-col items-center"
+      >
+        <div className="inline-flex items-center gap-3 px-6 py-2 rounded-full border border-primary/20 bg-primary/10 text-primary text-[10px] font-black uppercase tracking-[0.4em] mb-12 backdrop-blur-md">
+          EVENT_REWARDS::PRIZE_POOL
+        </div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-4xl mx-auto px-4 items-end">
+          {/* 2nd Place */}
+          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-white/20 bg-gradient-to-b from-white/[0.02] to-transparent shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group h-[280px] md:order-1 order-2">
+              <div className="absolute inset-0 bg-gradient-to-t from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 border border-white/40 text-black shadow-[0_0_30px_rgba(255,255,255,0.2)] z-10 group-hover:scale-110 transition-all duration-500">
+                <span className="text-3xl md:text-4xl font-display font-black tracking-tighter text-white drop-shadow-md">2</span>
+              </div>
+              <h4 className="relative z-10 text-base md:text-lg font-black uppercase tracking-[0.2em] text-white/80 mb-2 font-display italic">Runner Up</h4>
+              <div className="relative z-10 text-3xl md:text-4xl font-black text-white tracking-tighter mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">₹15,000</div>
+              <div className="relative z-10 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[9px] md:text-[10px] text-white/60 uppercase tracking-[0.2em] font-bold">Silver Tier</div>
+          </div>
+
+          {/* 1st Place */}
+          <div className="glass-card p-8 md:p-10 rounded-[2.5rem] border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_60px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_80px_rgba(var(--primary-rgb),0.3)] hover:-translate-y-4 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group z-20 h-[320px] md:order-2 order-1 mt-6 md:mt-0">
+              <div className="absolute -top-20 -right-20 w-48 h-48 bg-primary/20 rounded-full blur-[60px]" />
+              <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.1] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-24 h-24 md:w-28 md:h-28 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-200 via-primary to-yellow-600 border-2 border-primary/40 text-black shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] z-10 group-hover:scale-110 transition-all duration-500 relative">
+                <span className="material-symbols-outlined absolute -top-5 text-primary drop-shadow-[0_0_10px_rgba(var(--primary-rgb),1)] text-3xl md:text-4xl animate-bounce">emoji_events</span>
+                <span className="text-5xl font-display font-black tracking-tighter text-white drop-shadow-lg">1</span>
+              </div>
+              <h4 className="relative z-10 text-xl md:text-2xl font-black uppercase tracking-[0.3em] text-primary mb-2 font-display italic drop-shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]">Champion</h4>
+              <div className="relative z-10 text-5xl md:text-6xl font-black text-white tracking-tighter mb-3 blur-0 group-hover:text-primary transition-colors duration-500">₹20,000</div>
+              <div className="relative z-10 px-5 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-[10px] md:text-[11px] text-primary uppercase tracking-[0.3em] font-black shadow-[0_0_15px_rgba(var(--primary-rgb),0.2)]">Gold Tier</div>
+          </div>
+
+          {/* 3rd Place */}
+          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-orange-500/30 bg-gradient-to-b from-orange-500/[0.04] to-transparent shadow-[0_0_30px_rgba(249,115,22,0.05)] hover:shadow-[0_0_50px_rgba(249,115,22,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group h-[260px] md:order-3 order-3 mt-6 md:mt-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-14 h-14 md:w-16 md:h-16 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-300 via-orange-500 to-orange-800 border border-orange-500/40 text-black shadow-[0_0_30px_rgba(249,115,22,0.2)] z-10 group-hover:scale-110 transition-all duration-500">
+                <span className="text-2xl md:text-3xl font-display font-black tracking-tighter text-white drop-shadow-md">3</span>
+              </div>
+              <h4 className="relative z-10 text-sm md:text-base font-black uppercase tracking-[0.2em] text-orange-400 mb-2 font-display italic">2nd Runner Up</h4>
+              <div className="relative z-10 text-2xl md:text-3xl font-black text-white tracking-tighter mb-2 drop-shadow-[0_0_10px_rgba(249,115,22,0.3)]">₹10,000</div>
+              <div className="relative z-10 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 text-[9px] md:text-[10px] text-orange-400/80 uppercase tracking-[0.2em] font-bold">Bronze Tier</div>
+          </div>
+        </div>
+      </motion.div>
+
     </section>
   );
 };
