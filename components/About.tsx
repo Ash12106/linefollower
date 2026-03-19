@@ -131,17 +131,19 @@ export const About: React.FC = () => {
                   { icon: 'square_foot', text: "Maximum robot dimensions: 20cm x 20cm." },
                   { icon: 'engineering', text: "Teams can tune parameters between trial runs." }
                 ].map((item, i) => (
-                  <div key={i} className="flex flex-col items-center text-center gap-8 group/item">
-                    <div className="relative">
-                      <div className="w-20 h-20 rounded-3xl bg-black border border-primary/20 flex items-center justify-center group-hover/item:border-primary/60 group-hover/item:bg-primary/10 transition-all duration-500 shadow-2xl group-hover/item:-translate-y-2 group-hover/item:rotate-6">
-                        <span className="material-symbols-outlined text-primary text-4xl">{item.icon}</span>
+                  <div key={i} className="flex flex-col items-center text-center gap-6 group/item relative p-8 rounded-[2rem] transition-all duration-700 hover:bg-primary/[0.03] hover:shadow-[0_0_40px_rgba(var(--primary-rgb),0.1)] border border-transparent hover:border-primary/20 overflow-hidden">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent opacity-0 group-hover/item:opacity-100 transition-opacity duration-700 pointer-events-none" />
+                    
+                    <div className="relative z-10">
+                      <div className="w-20 h-20 rounded-3xl bg-black border border-primary/20 flex items-center justify-center group-hover/item:border-primary/60 group-hover/item:bg-primary/20 transition-all duration-500 group-hover/item:shadow-[0_0_30px_rgba(var(--primary-rgb),0.3)] group-hover/item:-translate-y-3 group-hover/item:scale-110">
+                        <span className="material-symbols-outlined text-primary text-4xl group-hover/item:animate-pulse">{item.icon}</span>
                       </div>
                       {/* Item Tech Badge */}
-                      <div className="absolute -bottom-2 -right-2 w-6 h-6 bg-primary text-black text-[8px] font-black flex items-center justify-center rounded-full border-2 border-black">
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 bg-black/90 text-primary border border-primary/40 text-[10px] font-black flex items-center justify-center rounded-full group-hover/item:bg-primary group-hover/item:text-black group-hover/item:scale-110 transition-all duration-500 z-20 group-hover/item:shadow-[0_0_15px_rgba(var(--primary-rgb),0.5)]">
                         0{i + 1}
                       </div>
                     </div>
-                    <p className="text-white/40 text-sm leading-relaxed uppercase tracking-[0.2em] italic font-light group-hover/item:text-white transition-colors">
+                    <p className="text-white/40 text-sm leading-relaxed uppercase tracking-[0.2em] italic font-light group-hover/item:text-white/90 transition-colors relative z-10 pt-2">
                       {item.text}
                     </p>
                   </div>
@@ -166,17 +168,18 @@ export const About: React.FC = () => {
               { title: "Control", desc: "Microcontroller based. No external communication allowed.", icon: "memory" },
               { title: "Drive", desc: "Differential drive or omnidirectional wheels permitted.", icon: "settings" }
             ].map((val, i) => (
-              <div key={i} className="glass-card p-8 rounded-[2rem] border-primary/5 hover:border-primary/40 bg-white/[0.02] transition-all group overflow-hidden relative flex flex-col items-center text-center justify-center min-h-[260px]">
-                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/10 transition-all duration-700" />
+              <div key={i} className="glass-card p-8 rounded-[2rem] border-primary/10 hover:border-primary/50 bg-white/[0.02] shadow-[0_0_0_transparent] hover:shadow-[0_0_30px_rgba(var(--primary-rgb),0.15)] transition-all duration-500 group overflow-hidden relative flex flex-col items-center text-center justify-center min-h-[260px] hover:-translate-y-2">
+                <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/5 rounded-full blur-[60px] group-hover:bg-primary/20 transition-all duration-700" />
+                <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 
-                <div className="w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-black border border-white/10 text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-2xl group-hover:border-primary/40">
-                  <span className="material-symbols-outlined text-4xl">{val.icon}</span>
+                <div className="relative z-10 w-16 h-16 mb-6 flex items-center justify-center rounded-2xl bg-black border border-white/10 text-primary group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 shadow-xl group-hover:border-primary/60 group-hover:shadow-[0_0_20px_rgba(var(--primary-rgb),0.4)]">
+                  <span className="material-symbols-outlined text-4xl group-hover:animate-pulse">{val.icon}</span>
                 </div>
                 
-                <h4 className="text-sm font-black uppercase tracking-[0.25em] text-white/80 mb-4 group-hover:text-primary transition-colors font-display italic">
+                <h4 className="relative z-10 text-sm font-black uppercase tracking-[0.25em] text-white/80 mb-4 group-hover:text-primary transition-colors font-display italic group-hover:drop-shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]">
                   {val.title}
                 </h4>
-                <p className="text-[11px] text-white/30 leading-relaxed font-light uppercase tracking-[0.1em] italic group-hover:text-white/60 transition-colors px-4">
+                <p className="relative z-10 text-[11px] text-white/40 leading-relaxed font-light uppercase tracking-[0.1em] italic group-hover:text-white/80 transition-colors px-4">
                   {val.desc}
                 </p>
               </div>
