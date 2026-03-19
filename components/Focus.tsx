@@ -29,11 +29,7 @@ const focusAreas = [
         },
 ];
 
-interface FocusProps {
-	onJoinClick?: () => void;
-}
-
-export const Focus: React.FC<FocusProps> = ({ onJoinClick }) => {
+export const Focus: React.FC = () => {
 	return (
 		<section id="focus" className="w-full py-32 px-6 md:px-12 relative overflow-hidden">
 			{/* Technical Background Layer */}

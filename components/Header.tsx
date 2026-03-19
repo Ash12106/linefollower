@@ -2,11 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Button } from './Button';
 
-interface HeaderProps {
-  onJoinClick?: () => void;
-}
-
-export const Header: React.FC<HeaderProps> = ({ onJoinClick }) => {
+export const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (

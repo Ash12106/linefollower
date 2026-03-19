@@ -2,11 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Button } from './Button';
 
-interface HeroProps {
-  onJoinClick?: () => void;
-}
-
-export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
+export const Hero: React.FC = () => {
   return (
     <section className="max-w-6xl w-full text-center py-10 md:py-16 relative z-10">
       <motion.div 
@@ -50,7 +46,14 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
       >
         <Button 
           variant="nexus" 
-          onClick={onJoinClick} 
+          onClick={() => {
+            const supportSection = document.getElementById('support');
+            if (supportSection) {
+              supportSection.scrollIntoView({ behavior: 'smooth' });
+            } else {
+              alert("Registration will open soon!");
+            }
+          }}
           className="px-14 py-8 text-xl tracking-[0.8em] font-black italic rounded-[2rem] transition-transform hover:scale-105 active:scale-95 shadow-[0_0_50px_rgba(var(--primary-rgb),0.1)] hover:shadow-[0_0_80px_rgba(var(--primary-rgb),0.2)]"
         >
           REGISTER TEAM
@@ -84,40 +87,40 @@ export const Hero: React.FC<HeroProps> = ({ onJoinClick }) => {
           EVENT_REWARDS::PRIZE_POOL
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-4xl mx-auto px-4 items-end">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 w-full max-w-4xl mx-auto px-4">
           {/* 2nd Place */}
-          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-white/20 bg-gradient-to-b from-white/[0.02] to-transparent shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_50px_rgba(255,255,255,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group h-[280px] md:order-1 order-2">
+          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-white/20 bg-white/[0.02] shadow-[0_0_30px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all duration-500 flex flex-col items-center text-center justify-center translate-y-0 md:translate-y-6 relative overflow-hidden group">
               <div className="absolute inset-0 bg-gradient-to-t from-white/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-16 h-16 md:w-20 md:h-20 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-200 via-gray-400 to-gray-600 border border-white/40 text-black shadow-[0_0_30px_rgba(255,255,255,0.2)] z-10 group-hover:scale-110 transition-all duration-500">
-                <span className="text-3xl md:text-4xl font-display font-black tracking-tighter text-white drop-shadow-md">2</span>
+              <div className="w-16 h-16 md:w-20 md:h-20 mb-4 md:mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-gray-300 to-gray-500 border-4 border-black text-black shadow-xl z-10 group-hover:scale-110 transition-transform duration-500">
+                <span className="text-2xl md:text-3xl font-black italic">2</span>
               </div>
-              <h4 className="relative z-10 text-base md:text-lg font-black uppercase tracking-[0.2em] text-white/80 mb-2 font-display italic">Runner Up</h4>
-              <div className="relative z-10 text-3xl md:text-4xl font-black text-white tracking-tighter mb-2 drop-shadow-[0_0_10px_rgba(255,255,255,0.3)]">₹15,000</div>
-              <div className="relative z-10 px-4 py-1.5 rounded-full border border-white/20 bg-white/5 text-[9px] md:text-[10px] text-white/60 uppercase tracking-[0.2em] font-bold">Silver Tier</div>
+              <h4 className="relative z-10 text-base md:text-lg font-black uppercase tracking-[0.2em] text-gray-300 mb-2 font-display italic">Runner Up</h4>
+              <div className="relative z-10 text-3xl md:text-4xl font-black text-white tracking-tighter mb-2 md:mb-4">₹15,000</div>
+              <p className="relative z-10 text-[9px] md:text-[10px] text-white/40 uppercase tracking-[0.2em] font-light">Silver Tier Reward</p>
           </div>
 
           {/* 1st Place */}
-          <div className="glass-card p-8 md:p-10 rounded-[2.5rem] border-primary/40 bg-gradient-to-b from-primary/[0.08] to-transparent shadow-[0_0_60px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_80px_rgba(var(--primary-rgb),0.3)] hover:-translate-y-4 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group z-20 h-[320px] md:order-2 order-1 mt-6 md:mt-0">
-              <div className="absolute -top-20 -right-20 w-48 h-48 bg-primary/20 rounded-full blur-[60px]" />
+          <div className="glass-card p-8 md:p-10 rounded-[2rem] border-primary/40 bg-primary/[0.05] shadow-[0_0_50px_rgba(var(--primary-rgb),0.15)] hover:shadow-[0_0_60px_rgba(var(--primary-rgb),0.3)] transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group z-10 scale-100 md:scale-110 mt-6 md:mt-0">
+              <div className="absolute -top-10 -right-10 w-32 h-32 bg-primary/20 rounded-full blur-[50px]" />
               <div className="absolute inset-0 bg-gradient-to-t from-primary/[0.1] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-24 h-24 md:w-28 md:h-28 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-200 via-primary to-yellow-600 border-2 border-primary/40 text-black shadow-[0_0_40px_rgba(var(--primary-rgb),0.4)] z-10 group-hover:scale-110 transition-all duration-500 relative">
-                <span className="material-symbols-outlined absolute -top-5 text-primary drop-shadow-[0_0_10px_rgba(var(--primary-rgb),1)] text-3xl md:text-4xl animate-bounce">emoji_events</span>
-                <span className="text-5xl font-display font-black tracking-tighter text-white drop-shadow-lg">1</span>
+              <div className="w-20 h-20 md:w-24 md:h-24 mb-4 md:mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-yellow-300 via-primary to-yellow-600 border-4 border-black text-black shadow-2xl z-10 group-hover:scale-110 transition-transform duration-500 relative">
+                <span className="material-symbols-outlined absolute -top-4 text-primary drop-shadow-md text-2xl md:text-3xl">emoji_events</span>
+                <span className="text-3xl md:text-4xl font-black italic">1</span>
               </div>
-              <h4 className="relative z-10 text-xl md:text-2xl font-black uppercase tracking-[0.3em] text-primary mb-2 font-display italic drop-shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]">Champion</h4>
-              <div className="relative z-10 text-5xl md:text-6xl font-black text-white tracking-tighter mb-3 blur-0 group-hover:text-primary transition-colors duration-500">₹20,000</div>
-              <div className="relative z-10 px-5 py-1.5 rounded-full border border-primary/40 bg-primary/10 text-[10px] md:text-[11px] text-primary uppercase tracking-[0.3em] font-black shadow-[0_0_15px_rgba(var(--primary-rgb),0.2)]">Gold Tier</div>
+              <h4 className="relative z-10 text-lg md:text-xl font-black uppercase tracking-[0.2em] text-primary mb-2 font-display italic drop-shadow-[0_0_10px_rgba(var(--primary-rgb),0.5)]">Champion</h4>
+              <div className="relative z-10 text-4xl md:text-5xl font-black text-white tracking-tighter mb-2 md:mb-4 text-gradient">₹20,000</div>
+              <p className="relative z-10 text-[10px] md:text-[11px] text-primary/60 uppercase tracking-[0.2em] font-bold">Gold Tier Reward</p>
           </div>
 
           {/* 3rd Place */}
-          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-orange-500/30 bg-gradient-to-b from-orange-500/[0.04] to-transparent shadow-[0_0_30px_rgba(249,115,22,0.05)] hover:shadow-[0_0_50px_rgba(249,115,22,0.15)] hover:-translate-y-2 transition-all duration-500 flex flex-col items-center text-center justify-center relative overflow-hidden group h-[260px] md:order-3 order-3 mt-6 md:mt-0">
-              <div className="absolute inset-0 bg-gradient-to-t from-orange-500/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              <div className="w-14 h-14 md:w-16 md:h-16 mb-4 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-300 via-orange-500 to-orange-800 border border-orange-500/40 text-black shadow-[0_0_30px_rgba(249,115,22,0.2)] z-10 group-hover:scale-110 transition-all duration-500">
-                <span className="text-2xl md:text-3xl font-display font-black tracking-tighter text-white drop-shadow-md">3</span>
+          <div className="glass-card p-6 md:p-8 rounded-[2rem] border-orange-900/40 bg-orange-900/[0.02] shadow-[0_0_30px_rgba(194,65,12,0.05)] hover:shadow-[0_0_40px_rgba(194,65,12,0.15)] transition-all duration-500 flex flex-col items-center text-center justify-center translate-y-0 md:translate-y-6 relative overflow-hidden group mt-6 md:mt-0">
+              <div className="absolute inset-0 bg-gradient-to-t from-orange-900/[0.05] via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+              <div className="w-16 h-16 md:w-20 md:h-20 mb-4 md:mb-6 flex items-center justify-center rounded-full bg-gradient-to-br from-orange-300 to-orange-700 border-4 border-black text-black shadow-xl z-10 group-hover:scale-110 transition-transform duration-500">
+                <span className="text-2xl md:text-3xl font-black italic">3</span>
               </div>
-              <h4 className="relative z-10 text-sm md:text-base font-black uppercase tracking-[0.2em] text-orange-400 mb-2 font-display italic">2nd Runner Up</h4>
-              <div className="relative z-10 text-2xl md:text-3xl font-black text-white tracking-tighter mb-2 drop-shadow-[0_0_10px_rgba(249,115,22,0.3)]">₹10,000</div>
-              <div className="relative z-10 px-4 py-1.5 rounded-full border border-orange-500/20 bg-orange-500/10 text-[9px] md:text-[10px] text-orange-400/80 uppercase tracking-[0.2em] font-bold">Bronze Tier</div>
+              <h4 className="relative z-10 text-base md:text-lg font-black uppercase tracking-[0.2em] text-orange-400 mb-2 font-display italic">2nd Runner Up</h4>
+              <div className="relative z-10 text-3xl md:text-4xl font-black text-white tracking-tighter mb-2 md:mb-4">₹10,000</div>
+              <p className="relative z-10 text-[9px] md:text-[10px] text-white/40 uppercase tracking-[0.2em] font-light">Bronze Tier Reward</p>
           </div>
         </div>
       </motion.div>
