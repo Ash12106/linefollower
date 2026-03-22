@@ -4,7 +4,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
 import { Footer } from './components/Footer';
-import Galaxy from './components/Galaxy';
+import { FramesBackground } from './components/FramesBackground';
 import { Focus } from './components/Focus';
 import { Gallery } from './components/Gallery';
 import Support from './components/Support';
@@ -51,35 +51,14 @@ const App: React.FC = () => {
         {loading && <Preloader />}
       </AnimatePresence>
 
-      {/* Background Decor Layer - Technical Grid and Data Streams */}
-      <div className="fixed inset-0 z-1 z-0 pointer-events-none opacity-20">
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_800px_at_100%_200px,#D4AF370a,transparent)]"></div>
-      </div>
-
-      {/* Galaxy Background Layer */}
+      {/* Image Sequence Background Layer */}
       <motion.div 
         style={{ 
-          scale: useTransform(smoothProgress, [0, 1], [1, 1.1]),
           opacity: useTransform(smoothProgress, [0, 0.5, 1], [1, 0.8, 1])
         }}
-        className="fixed inset-0 z-0 pointer-events-auto"
+        className="fixed inset-0 z-0 pointer-events-none"
       >
-        <div className="w-full h-full relative">
-          <Galaxy
-            starSpeed={0.5}
-            density={1}
-            hueShift={140}
-            speed={1}
-            glowIntensity={0.3}
-            saturation={0}
-            mouseRepulsion
-            repulsionStrength={2}
-            twinkleIntensity={0.3}
-            rotationSpeed={0.1}
-            transparent
-          />
-        </div>
+        <FramesBackground />
       </motion.div>
 
       {/* Main Content Layer - pointer-events-none allows mouse to pass through to background events */}
